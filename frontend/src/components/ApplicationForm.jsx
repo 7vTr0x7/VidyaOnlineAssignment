@@ -7,6 +7,8 @@ import { fieldsConfig } from "@/config/fieldsConfig";
 const InputField = React.lazy(() => import("./InputField"));
 const SelectField = React.lazy(() => import("./SelectField"));
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ApplicationForm() {
   const initialState = fieldsConfig.reduce((acc, field) => {
     acc[field.name] = "";
@@ -29,7 +31,7 @@ export default function ApplicationForm() {
       return toast.error("Please fix validation errors");
 
     try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
