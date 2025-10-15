@@ -25,6 +25,12 @@ export const validateForm = (formData) => {
   if (!formData.pan || !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(formData.pan))
     errors.pan = "Invalid PAN format (e.g., RTGHP2345G)";
 
+  if (!formData.panDob) errors.panDob = "PAN Date of Birth is required";
+  else {
+    const date = new Date(formData.panDob);
+    if (isNaN(date.getTime())) errors.panDob = "Invalid date format";
+  }
+
   if (!formData.meAcType) errors.meAcType = "Account type is required";
 
   if (!formData.meName || !/^[A-Za-z\s]+$/.test(formData.meName))

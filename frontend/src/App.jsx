@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import ApplicationForm from "./components/ApplicationForm";
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <ApplicationForm />
+    </>
+  );
+};
 
-export default App
+export default App;
