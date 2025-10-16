@@ -31,11 +31,12 @@ export default function ApplicationForm() {
       return toast.error("Please fix validation errors");
 
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch("/api/admin/1/saveApplicationDraft", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
       if (res.ok) {
         toast.success("Form submitted successfully!");
         setFormData(initialState);

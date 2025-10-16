@@ -24,8 +24,11 @@ export default function ApplicationList() {
     setLoading(true);
     try {
       const res = await fetch(
-        `${API_URL}?page=${currentPage - 1}&size=${size}`
+        `/api/admin/1/getApplicationByAgentId?page=${
+          currentPage - 1
+        }&size=${size}`
       );
+
       if (!res.ok) throw new Error("Failed to fetch");
 
       const data = await res.json();
