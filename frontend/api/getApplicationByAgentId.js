@@ -1,6 +1,3 @@
-// api/getApplicationByAgentId.js
-import fetch from "node-fetch";
-
 export default async function handler(req, res) {
   try {
     const { page, size } = req.query;
