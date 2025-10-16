@@ -9,7 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { API_URL } from "@/constants/api";
+
+const API_URL = import.meta.env.VITE_GET_API_URL;
 
 export default function ApplicationList() {
   const [applications, setApplications] = useState([]);

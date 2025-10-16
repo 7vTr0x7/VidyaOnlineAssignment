@@ -3,10 +3,11 @@ import toast, { Toaster } from "react-hot-toast";
 import { Button } from "@/components/ui/button";
 import { validateForm } from "@/utils/validation";
 import { fieldsConfig } from "@/config/fieldsConfig";
-import { API_URL } from "@/constants/api";
 
 const InputField = React.lazy(() => import("./InputField"));
 const SelectField = React.lazy(() => import("./SelectField"));
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function ApplicationForm() {
   const initialState = fieldsConfig.reduce((acc, field) => {
